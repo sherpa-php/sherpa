@@ -1,0 +1,18 @@
+{
+    "name": "sherpa/sherpa",
+    "description": "Sherpa Framework project template",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Sherpa\\Sherpa\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "belicfr",
+            "email": "anonymous@ano.nymous"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}
