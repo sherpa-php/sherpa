@@ -1,6 +1,8 @@
 {
     "name": "sherpa/sherpa",
+    "type": "project",
     "license": "MIT",
+    "minimum-stability": "dev",
     "autoload": {
         "psr-4": {
             "Sherpa\\Sherpa\\": "src/"
@@ -12,5 +14,7 @@
             "email": "belicfr@mail.com"
         }
     ],
-    "require": {}
+    "require": {
+        "sherpa/core": "dev-main"
+    }
 }

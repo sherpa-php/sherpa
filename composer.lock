@@ -4,12 +4,52 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "44c392421be2149a384b1b60fdd4b115",
-    "packages": [],
+    "content-hash": "692377bf0dae98c2ac0ec58e10d20b85",
+    "packages": [
+        {
+            "name": "sherpa/core",
+            "version": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sherpa-php/core.git",
+                "reference": "9437aeb8e5faafaf0bc610a3eeb1bb049a2f1547"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sherpa-php/core/zipball/9437aeb8e5faafaf0bc610a3eeb1bb049a2f1547",
+                "reference": "9437aeb8e5faafaf0bc610a3eeb1bb049a2f1547",
+                "shasum": ""
+            },
+            "default-branch": true,
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Sherpa\\Core\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "belicfr",
+                    "email": "96206878+belicfr@users.noreply.github.com"
+                }
+            ],
+            "support": {
+                "issues": "https://github.com/sherpa-php/core/issues",
+                "source": "https://github.com/sherpa-php/core/tree/main"
+            },
+            "time": "2024-12-02T07:09:12+00:00"
+        }
+    ],
     "packages-dev": [],
     "aliases": [],
-    "minimum-stability": "stable",
-    "stability-flags": {},
+    "minimum-stability": "dev",
+    "stability-flags": {
+        "sherpa/core": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {},
