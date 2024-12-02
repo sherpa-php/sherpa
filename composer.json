@@ -1,0 +1,16 @@
+{
+    "name": "sherpa/sherpa",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Sherpa\\Sherpa\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "belicfr",
+            "email": "belicfr@mail.com"
+        }
+    ],
+    "require": {}
+}
