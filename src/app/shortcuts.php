@@ -23,8 +23,20 @@ function assets_path(): string
     return public_path() . "/assets";
 }
 
-function render(string $viewPath, array $props = []): SherpaRendering
+function render(string $viewPath, array $props = [], string $title = ""): SherpaRendering
 {
+    $viewPathSplit = explode(':', $viewPath, 2);
+
+    if (isset($viewPathSplit[1]))
+    {
+        $title = $viewPathSplit[1];
+    }
+
+    $viewPath = $viewPathSplit[0];
+
     return SherpaEngine::prepare(views_path() . "/template.html")
-                       ->render(views_path() . "/$viewPath.php", $props);
+                       ->render(
+                           views_path() . "/pages/$viewPath.php",
+                           $props,
+                           $title);
 }
