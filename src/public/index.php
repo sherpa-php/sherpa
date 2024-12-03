@@ -27,10 +27,13 @@ const __SRC__ = __DIR__ . "/..";
 
 require_once __ROOT__ . "/vendor/autoload.php";
 
-require_once __ROOT__ . "/vendor/sherpa/core/src/core/utils.php";
 
 Dotenv::createImmutable(__ROOT__)
     ->load();
+
+
+require_once __ROOT__ . "/vendor/sherpa/core/src/core/utils.php";
+require_once __SRC__ . "/app/shortcuts.php";
 
 
 /*
