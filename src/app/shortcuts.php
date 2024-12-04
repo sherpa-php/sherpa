@@ -54,7 +54,7 @@ function render(string $viewPath, array $props = [], string $title = ""): Sherpa
 
     $viewPath = $viewPathSplit[0];
 
-    return SherpaEngine::prepare(views_path() . "/template.html")
+    return SherpaEngine::prepare(views_path() . "/template.php")
                        ->render(
                            views_path() . "/pages/$viewPath.php",
                            $props,
