@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f3dde7cc12284c406b5e2ef2f8a2bd00",
+    "content-hash": "064afc6ab2975704835aba9fc44428ed",
     "packages": [
         {
             "name": "graham-campbell/result-type",
@@ -147,19 +147,23 @@
         },
         {
             "name": "sherpa/core",
-            "version": "dev-main",
+            "version": "dev-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sherpa-php/core.git",
-                "reference": "3e1b40625ddc46123c95682c4947fe80aeacb09c"
+                "reference": "76843fb4a6c78a561cff8f14b2e49197e5a2c921"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sherpa-php/core/zipball/3e1b40625ddc46123c95682c4947fe80aeacb09c",
-                "reference": "3e1b40625ddc46123c95682c4947fe80aeacb09c",
+                "url": "https://api.github.com/repos/sherpa-php/core/zipball/76843fb4a6c78a561cff8f14b2e49197e5a2c921",
+                "reference": "76843fb4a6c78a561cff8f14b2e49197e5a2c921",
                 "shasum": ""
             },
-            "default-branch": true,
+            "require": {
+                "sherpa/db": "dev-dev",
+                "sherpa/trail": "dev-dev",
+                "symfony/string": "7.3.x-dev"
+            },
             "type": "library",
             "autoload": {
                 "psr-4": {
@@ -178,9 +182,84 @@
             ],
             "support": {
                 "issues": "https://github.com/sherpa-php/core/issues",
-                "source": "https://github.com/sherpa-php/core/tree/main"
+                "source": "https://github.com/sherpa-php/core/tree/dev"
             },
-            "time": "2024-12-03T07:36:48+00:00"
+            "time": "2024-12-04T09:57:44+00:00"
+        },
+        {
+            "name": "sherpa/db",
+            "version": "dev-dev",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sherpa-php/db.git",
+                "reference": "cdb8745b5f79e603e039c2537b24169123df0f06"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sherpa-php/db/zipball/cdb8745b5f79e603e039c2537b24169123df0f06",
+                "reference": "cdb8745b5f79e603e039c2537b24169123df0f06",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Sherpa\\Db\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "belicfr",
+                    "email": "96206878+belicfr@users.noreply.github.com"
+                }
+            ],
+            "support": {
+                "issues": "https://github.com/sherpa-php/db/issues",
+                "source": "https://github.com/sherpa-php/db/tree/dev"
+            },
+            "time": "2024-12-04T09:58:23+00:00"
+        },
+        {
+            "name": "sherpa/trail",
+            "version": "dev-dev",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sherpa-php/trail.git",
+                "reference": "8ec1e1a3e21fdcbb63131255a638e91332adf577"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sherpa-php/trail/zipball/8ec1e1a3e21fdcbb63131255a638e91332adf577",
+                "reference": "8ec1e1a3e21fdcbb63131255a638e91332adf577",
+                "shasum": ""
+            },
+            "require": {
+                "sherpa/db": "dev-dev"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Sherpa\\Trail\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "belicfr",
+                    "email": "96206878+belicfr@users.noreply.github.com"
+                }
+            ],
+            "support": {
+                "issues": "https://github.com/sherpa-php/trail/issues",
+                "source": "https://github.com/sherpa-php/trail/tree/dev"
+            },
+            "time": "2024-12-04T09:42:52+00:00"
         },
         {
             "name": "symfony/polyfill-ctype",
@@ -245,6 +324,167 @@
             ],
             "support": {
                 "source": "https://github.com/symfony/polyfill-ctype/tree/v1.31.0"
+            },
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2024-09-09T11:45:10+00:00"
+        },
+        {
+            "name": "symfony/polyfill-intl-grapheme",
+            "version": "1.x-dev",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/polyfill-intl-grapheme.git",
+                "reference": "b9123926e3b7bc2f98c02ad54f6a4b02b91a8abe"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/polyfill-intl-grapheme/zipball/b9123926e3b7bc2f98c02ad54f6a4b02b91a8abe",
+                "reference": "b9123926e3b7bc2f98c02ad54f6a4b02b91a8abe",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.2"
+            },
+            "suggest": {
+                "ext-intl": "For best performance"
+            },
+            "default-branch": true,
+            "type": "library",
+            "extra": {
+                "thanks": {
+                    "name": "symfony/polyfill",
+                    "url": "https://github.com/symfony/polyfill"
+                }
+            },
+            "autoload": {
+                "files": [
+                    "bootstrap.php"
+                ],
+                "psr-4": {
+                    "Symfony\\Polyfill\\Intl\\Grapheme\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nicolas Grekas",
+                    "email": "p@tchwork.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony polyfill for intl's grapheme_* functions",
+            "homepage": "https://symfony.com",
+            "keywords": [
+                "compatibility",
+                "grapheme",
+                "intl",
+                "polyfill",
+                "portable",
+                "shim"
+            ],
+            "support": {
+                "source": "https://github.com/symfony/polyfill-intl-grapheme/tree/v1.31.0"
+            },
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2024-09-09T11:45:10+00:00"
+        },
+        {
+            "name": "symfony/polyfill-intl-normalizer",
+            "version": "1.x-dev",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/polyfill-intl-normalizer.git",
+                "reference": "3833d7255cc303546435cb650316bff708a1c75c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/polyfill-intl-normalizer/zipball/3833d7255cc303546435cb650316bff708a1c75c",
+                "reference": "3833d7255cc303546435cb650316bff708a1c75c",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.2"
+            },
+            "suggest": {
+                "ext-intl": "For best performance"
+            },
+            "default-branch": true,
+            "type": "library",
+            "extra": {
+                "thanks": {
+                    "name": "symfony/polyfill",
+                    "url": "https://github.com/symfony/polyfill"
+                }
+            },
+            "autoload": {
+                "files": [
+                    "bootstrap.php"
+                ],
+                "psr-4": {
+                    "Symfony\\Polyfill\\Intl\\Normalizer\\": ""
+                },
+                "classmap": [
+                    "Resources/stubs"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nicolas Grekas",
+                    "email": "p@tchwork.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony polyfill for intl's Normalizer class and related functions",
+            "homepage": "https://symfony.com",
+            "keywords": [
+                "compatibility",
+                "intl",
+                "normalizer",
+                "polyfill",
+                "portable",
+                "shim"
+            ],
+            "support": {
+                "source": "https://github.com/symfony/polyfill-intl-normalizer/tree/v1.31.0"
             },
             "funding": [
                 {
@@ -423,6 +663,93 @@
                 }
             ],
             "time": "2024-09-09T11:45:10+00:00"
+        },
+        {
+            "name": "symfony/string",
+            "version": "7.3.x-dev",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/string.git",
+                "reference": "446e0d146f991dde3e73f45f2c97a9faad773c82"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/string/zipball/446e0d146f991dde3e73f45f2c97a9faad773c82",
+                "reference": "446e0d146f991dde3e73f45f2c97a9faad773c82",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=8.2",
+                "symfony/polyfill-ctype": "~1.8",
+                "symfony/polyfill-intl-grapheme": "~1.0",
+                "symfony/polyfill-intl-normalizer": "~1.0",
+                "symfony/polyfill-mbstring": "~1.0"
+            },
+            "conflict": {
+                "symfony/translation-contracts": "<2.5"
+            },
+            "require-dev": {
+                "symfony/emoji": "^7.1",
+                "symfony/error-handler": "^6.4|^7.0",
+                "symfony/http-client": "^6.4|^7.0",
+                "symfony/intl": "^6.4|^7.0",
+                "symfony/translation-contracts": "^2.5|^3.0",
+                "symfony/var-exporter": "^6.4|^7.0"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "Resources/functions.php"
+                ],
+                "psr-4": {
+                    "Symfony\\Component\\String\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nicolas Grekas",
+                    "email": "p@tchwork.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Provides an object-oriented API to strings and deals with bytes, UTF-8 code points and grapheme clusters in a unified way",
+            "homepage": "https://symfony.com",
+            "keywords": [
+                "grapheme",
+                "i18n",
+                "string",
+                "unicode",
+                "utf-8",
+                "utf8"
+            ],
+            "support": {
+                "source": "https://github.com/symfony/string/tree/v7.2.0"
+            },
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2024-11-13T13:31:26+00:00"
         },
         {
             "name": "vlucas/phpdotenv",
