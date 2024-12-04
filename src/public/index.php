@@ -43,6 +43,7 @@ require_once __SRC__ . "/app/shortcuts.php";
 require_once __SRC__ . "/router/default.php";
 
 $request = new Request();
+Router::middlewares(include __SRC__ . "/app/config/middlewares.php");
 Router::resolve($request);
 
 ob_end_flush();
