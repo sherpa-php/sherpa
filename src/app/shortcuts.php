@@ -2,6 +2,8 @@
 
 use Sherpa\Core\views\SherpaEngine;
 use Sherpa\Core\views\SherpaRendering;
+use Sherpa\Db\database\DB;
+use Sherpa\Db\database\Reference;
 
 /**
  * @return string Views directory absolute path
@@ -59,4 +61,15 @@ function render(string $viewPath, array $props = [], string $title = ""): Sherpa
                            views_path() . "/pages/$viewPath.php",
                            $props,
                            $title);
+}
+
+/**
+ * Create a DB Reference object.
+ *
+ * @param string $ref
+ * @return Reference
+ */
+function ref(string $ref): Reference
+{
+    return DB::ref($ref);
 }
