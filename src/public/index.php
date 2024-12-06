@@ -22,7 +22,10 @@ use Sherpa\Core\router\Router;
 session_start();
 ob_start();
 
+/** Sherpa project root path */
 const __ROOT__ = __DIR__ . "/../..";
+
+/** src/ directory path */
 const __SRC__ = __DIR__ . "/..";
 
 require_once __ROOT__ . "/vendor/autoload.php";
