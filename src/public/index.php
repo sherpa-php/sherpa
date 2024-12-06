@@ -50,6 +50,16 @@ Sherpa::loadEnv();
 
 
 /*
+ * Database Connection
+ */
+
+if (!DB::connect(...Sherpa::db()))
+{
+    throw new CannotConnectToDatabaseException();
+}
+
+
+/*
  * Router Loading
  */
 
