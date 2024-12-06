@@ -16,8 +16,11 @@
 
 
 use Dotenv\Dotenv;
+use Sherpa\Core\core\Sherpa;
+use Sherpa\Core\exceptions\database\CannotConnectToDatabaseException;
 use Sherpa\Core\router\Request;
 use Sherpa\Core\router\Router;
+use Sherpa\Db\database\DB;
 
 session_start();
 ob_start();
@@ -37,6 +40,13 @@ Dotenv::createImmutable(__ROOT__)
 
 require_once __ROOT__ . "/vendor/sherpa/core/src/core/utils.php";
 require_once __SRC__ . "/app/shortcuts.php";
+
+
+/*
+ * Sherpa Environment Initialization
+ */
+
+Sherpa::loadEnv();
 
 
 /*
