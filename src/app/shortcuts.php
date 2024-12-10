@@ -1,5 +1,7 @@
 <?php
 
+use Sherpa\Core\core\Sherpa;
+use Sherpa\Core\security\CSRF;
 use Sherpa\Core\views\SherpaEngine;
 use Sherpa\Core\views\SherpaRendering;
 use Sherpa\Db\database\DB;
@@ -72,4 +74,12 @@ function render(string $viewPath, array $props = [], string $title = ""): Sherpa
 function ref(string $ref): Reference
 {
     return DB::ref($ref);
+}
+
+/**
+ * @return string|null Current CSRF token if exists
+ */
+function csrf(): ?string
+{
+    return Sherpa::session("CSRF_TOKEN");
 }
