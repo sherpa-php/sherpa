@@ -20,6 +20,7 @@ use Sherpa\Core\core\Sherpa;
 use Sherpa\Core\exceptions\database\CannotConnectToDatabaseException;
 use Sherpa\Core\router\Request;
 use Sherpa\Core\router\Router;
+use Sherpa\Core\security\CSRF;
 use Sherpa\Db\database\DB;
 
 session_start();
@@ -36,6 +37,16 @@ require_once __ROOT__ . "/vendor/autoload.php";
 
 Dotenv::createImmutable(__ROOT__)
     ->load();
+
+
+/*
+ * CSRF generation
+ */
+
+if (Sherpa::session("CSRF_TOKEN") === null)
+{
+    CSRF::regenerate();
+}
 
 
 require_once __ROOT__ . "/vendor/sherpa/core/src/core/utils.php";
