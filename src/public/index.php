@@ -17,11 +17,11 @@
 
 use Dotenv\Dotenv;
 use Sherpa\Core\core\Sherpa;
-use Sherpa\Core\exceptions\database\CannotConnectToDatabaseException;
 use Sherpa\Core\router\Request;
 use Sherpa\Core\router\Router;
 use Sherpa\Core\security\CSRF;
 use Sherpa\Db\database\DB;
+use Sherpa\Exceptions\exceptions\database\CannotConnectToDatabaseException;
 
 session_start();
 ob_start();
