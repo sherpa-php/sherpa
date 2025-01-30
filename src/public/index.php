@@ -35,6 +35,13 @@ const __SRC__ = __DIR__ . "/..";
 require_once __ROOT__ . "/vendor/autoload.php";
 
 
+/*
+ * Bootstrap
+ */
+
+require_once __SRC__ . "/app/core/bootstrap.php";
+
+
 Dotenv::createImmutable(__ROOT__)
     ->load();
 
