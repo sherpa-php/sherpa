@@ -78,6 +78,13 @@ if (!DB::connect(...Sherpa::db()))
 
 
 /*
+ * Validator Rules Loading
+ */
+
+Sherpa::loadRules(include_once __SRC__ . "/app/config/rules.php");
+
+
+/*
  * Router Loading
  */
 
