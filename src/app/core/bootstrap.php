@@ -1,22 +1,13 @@
 <?php
 
-use Sherpa\Exceptions\exceptions\Handle;
+use Sherpa\Core\core\Sherpa;
 
-
-/*
- * Handle errors.
- */
-
-set_error_handler(function ($severity, $message, $file, $line)
+if (Sherpa::isDevMode())
 {
-    throw new ErrorException($message, 0, $severity, $file, $line);
-});
+    // It displays sensitive information, it should only be rendered
+    // in DEVELOPMENT MODE ONLY.
 
-
-/*
- * Handle exceptions.
- */
-set_exception_handler(function (Exception $exception)
-{
-    new Handle($exception)->render();
-});
+    $whoops = new \Whoops\Run;
+    $whoops->pushHandler(new \Whoops\Handler\PrettyPageHandler);
+    $whoops->register();
+}
