@@ -1,6 +1,8 @@
 <?php
 
 use Sherpa\Core\core\Sherpa;
+use Sherpa\Core\router\Request;
+use Sherpa\Core\router\Router;
 use Sherpa\Core\security\CSRF;
 use Sherpa\Core\views\SherpaEngine;
 use Sherpa\Core\views\SherpaRendering;
@@ -82,4 +84,23 @@ function ref(string $ref): Reference
 function csrf(): ?string
 {
     return Sherpa::session("CSRF_TOKEN");
+}
+
+/**
+ * Retrieve route by name, and return its path.
+ *
+ * @param string $name Route's name
+ * @return string Route's path if exists,
+ *                or '#'
+ */
+function route(string $name): string
+{
+    $route = Router::getRouteByName($name);
+
+    if ($route !== null)
+    {
+        return "/{$route->path()}";
+    }
+
+    return "#";
 }
