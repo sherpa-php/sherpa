@@ -21,7 +21,7 @@ use Sherpa\Core\router\Request;
 use Sherpa\Core\router\Router;
 use Sherpa\Core\security\CSRF;
 use Sherpa\Db\database\DB;
-use Sherpa\Exceptions\exceptions\database\CannotConnectToDatabaseException;
+use Sherpa\Db\database\exceptions\CannotConnectToDatabaseException;
 
 session_start();
 ob_start();
@@ -35,15 +35,22 @@ const __SRC__ = __DIR__ . "/..";
 require_once __ROOT__ . "/vendor/autoload.php";
 
 
+Dotenv::createImmutable(__ROOT__)
+    ->load();
+
+
+/*
+ * Sherpa Environment Initialization
+ */
+
+Sherpa::loadEnv();
+
+
 /*
  * Bootstrap
  */
 
 require_once __SRC__ . "/app/core/bootstrap.php";
-
-
-Dotenv::createImmutable(__ROOT__)
-    ->load();
 
 
 /*
@@ -61,20 +68,26 @@ require_once __SRC__ . "/app/shortcuts.php";
 
 
 /*
- * Sherpa Environment Initialization
- */
-
-Sherpa::loadEnv();
-
-
-/*
  * Database Connection
  */
 
-if (!DB::connect(...Sherpa::db()))
+(function ()
 {
-    throw new CannotConnectToDatabaseException();
-}
+    list($dbms, $host, $port, $charset, $dbname, $user, $password) = Sherpa::db();
+
+    if (!DB::connect(
+        $dbms,
+        $host,
+        $port,
+        $charset,
+        $dbname,
+        $user,
+        $password,
+        Sherpa::env("DB_AUTOCOMMIT")))
+    {
+        throw new CannotConnectToDatabaseException();
+    }
+})();
 
 
 /*
