@@ -57,7 +57,8 @@ require_once __SRC__ . "/app/core/bootstrap.php";
  * CSRF generation
  */
 
-if (Sherpa::session("CSRF_TOKEN") === null)
+if (Sherpa::validateEnv("CSRF_TOKEN")
+    && Sherpa::session("CSRF_TOKEN") === null)
 {
     CSRF::regenerate();
 }
