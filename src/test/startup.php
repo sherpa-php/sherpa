@@ -4,4 +4,7 @@
  * Sherpa Test system startup.
  */
 
-echo "<h1>Sherpa Test Startup</h1>";
+
+require_once __ROOT__ . "/vendor/sherpa/test/src/ui/ui.php";
+
+overlay();   // Render Sherpa Test's overlay
