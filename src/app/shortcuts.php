@@ -104,3 +104,11 @@ function route(string $name): string
 
     return "#";
 }
+
+/**
+ * Launch Sherpa Test startup script file.
+ */
+function test(): void
+{
+    require_once __SRC__ . "/test/startup.php";
+}
