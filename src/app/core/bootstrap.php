@@ -11,3 +11,8 @@ if (Sherpa::isDevMode())
     $whoops->pushHandler(new \Whoops\Handler\PrettyPageHandler);
     $whoops->register();
 }
+else
+{
+    set_exception_handler(fn () => abort(500));
+    set_error_handler(fn () => abort(500));
+}
