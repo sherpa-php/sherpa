@@ -8,6 +8,10 @@ use Sherpa\Core\views\SherpaEngine;
 use Sherpa\Core\views\SherpaRendering;
 use Sherpa\Db\database\DB;
 use Sherpa\Db\database\Reference;
+use Sherpa\Sherpa\test\exceptions\InvalidTestClass;
+use Sherpa\Sherpa\test\exceptions\InvalidTestClassException;
+use Sherpa\Test\core\Test;
+use Sherpa\Test\core\TestManager;
 
 /**
  * @return string Views directory absolute path
@@ -106,9 +110,13 @@ function route(string $name): string
 }
 
 /**
- * Launch Sherpa Test startup script file.
+ * Launch a Sherpa test.
+ * @throws InvalidTestClassException If provided class does
+ *                                   not implement Test interface
  */
-function test(): void
+function test(string $testClass): void
 {
     require_once __SRC__ . "/test/startup.php";
+
+    TestManager::run($testClass);
 }
