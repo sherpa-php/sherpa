@@ -102,7 +102,7 @@ Sherpa::loadRules(include_once __SRC__ . "/app/config/rules.php");
  * Router Loading
  */
 
-require_once __SRC__ . "/router/test.php";
+if (Sherpa::isDevMode()) require_once __SRC__ . "/router/test.php";
 require_once __SRC__ . "/router/default.php";  // default route collection has a greater
                                                // priority than internal routes collections.
 
