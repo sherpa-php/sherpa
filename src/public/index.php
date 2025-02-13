@@ -73,7 +73,7 @@ require_once __SRC__ . "/app/shortcuts.php";
 
 (function ()
 {
-    list($dbms, $host, $port, $charset, $dbname, $user, $password) = Sherpa::db();
+    extract(Sherpa::db());
 
     if (!DB::connect(
         $dbms,
