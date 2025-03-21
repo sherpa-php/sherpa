@@ -46,6 +46,9 @@ Dotenv::createImmutable(__ROOT__)
 Sherpa::loadEnv();
 
 
+require_once __ROOT__ . "/vendor/sherpa/core/src/core/utils.php";
+
+
 /*
  * Bootstrap
  */
@@ -64,7 +67,6 @@ if (Sherpa::validateEnv("CSRF_TOKEN")
 }
 
 
-require_once __ROOT__ . "/vendor/sherpa/core/src/core/utils.php";
 require_once __SRC__ . "/app/shortcuts.php";
 
 
@@ -105,6 +107,7 @@ Sherpa::loadRules(include_once __SRC__ . "/app/config/rules.php");
 if (Sherpa::isDevMode()) require_once __SRC__ . "/router/test.php";
 require_once __SRC__ . "/router/default.php";  // default route collection has a greater
                                                // priority than internal routes collections.
+
 
 $request = new Request();
 Router::middlewares(include __SRC__ . "/app/config/middlewares.php");
