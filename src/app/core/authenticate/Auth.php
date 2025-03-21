@@ -97,5 +97,16 @@ class Auth
             return false;
         }
     }
+
+    /**
+     * Log out from session's account.
+     */
+    public static function logout(): void
+    {
+        unset($_SESSION[self::SESSION_KEY]);
+
+        $session = Session::createOrRetrieve();
+        $session->user_id = null;
+        $session->update();
     }
 }
