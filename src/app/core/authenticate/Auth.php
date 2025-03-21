@@ -35,4 +35,22 @@ class Auth
             ? User::query()->find(Auth::id())
             : null;
     }
+
+    public static function attempt(
+        string $cred,
+        string $password,
+        string $credColumn = "name",
+        string $passwordColumn = "password"): bool
+    {
+        $account = User::query()
+                       ->where($credColumn, $cred)
+                       ->first();
+
+        if ($account === null)
+        {
+            return false;
+        }
+
+        return Hash::verify($password, $account->$credColumn);
+    }
 }
