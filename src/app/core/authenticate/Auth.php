@@ -57,6 +57,16 @@ class Auth
             : null;
     }
 
+    /**
+     * Attempt to log in to an account,
+     * using the provided credentials.
+     *
+     * @param string $cred
+     * @param string $password
+     * @param string $credColumn
+     * @param string $passwordColumn
+     * @return bool If the attempt is successful
+     */
     public static function attempt(
         string $cred,
         string $password,
