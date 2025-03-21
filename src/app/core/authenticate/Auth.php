@@ -82,6 +82,20 @@ class Auth
             return false;
         }
 
-        return Hash::verify($password, $account->$credColumn);
+        if (Hash::verify($password, $account->$passwordColumn))
+        {
+            $_SESSION[self::SESSION_KEY] = $account->id;
+
+            $session = Session::createOrRetrieve();
+            $session->user_id = $account->id;
+            $session->update();
+
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
     }
 }
