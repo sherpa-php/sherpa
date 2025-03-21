@@ -15,4 +15,5 @@ else
 {
     set_exception_handler(fn () => abort(500));
     set_error_handler(fn () => abort(500));
+    register_shutdown_function(fn () => abort(500));
 }
