@@ -7,7 +7,7 @@ use Sherpa\Core\middlewares\MiddlewareResponse;
 use Sherpa\Core\router\Request;
 use Sherpa\Sherpa\app\core\authenticate\Auth;
 
-class GuestMiddleware implements Middleware
+class GuestMiddleware extends Middleware
 {
     public function run(Request $request): MiddlewareResponse
     {
