@@ -26,11 +26,11 @@ use Sherpa\Db\database\exceptions\CannotConnectToDatabaseException;
 session_start();
 ob_start();
 
-/** Sherpa project root path */
-const __ROOT__ = __DIR__ . "/../..";
-
 /** src/ directory path */
 const __SRC__ = __DIR__ . "/..";
+
+/** Sherpa project root path */
+const __ROOT__ = __SRC__ . "/..";
 
 require_once __ROOT__ . "/vendor/autoload.php";
 
